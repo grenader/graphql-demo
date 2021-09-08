@@ -4,6 +4,9 @@ It's a StringBoot application. It uses [Lombok](https://projectlombok.org/setup/
 
 It needs **Java 11**! Make sure that you are running it on before starting the application or opening the project.
 
+## Documentation
+Main Documentation is here: https://docs.spring.io/spring-graphql/docs/1.0.0-M2/reference/html/
+
 ### Check your JDK:
 ```
 java -version
@@ -41,7 +44,7 @@ You can access it via http://localhost:8080/graphiql URL
 Try the following queries. Just enter provided queries to the windows on the left and press 'Run' button on the top.
 The interface has a useful auto-complete feature.
 
-### hello. 
+### hello
 Simple String query with a response value from a property.
 ```
 query {
@@ -50,7 +53,7 @@ query {
 ```
 Look at GreetingController.hello() method to see what it is doing.
 
-### greeting.
+### greeting
 Simple String query with a response set by a filter. This demonstrates a mechanism of RequestAttributeFilter. It is a filter that gets called before the request is processed by GraphQL.  
 ```
 query {
@@ -59,7 +62,7 @@ query {
 ```
 Look at GreetingController.greeting() method to see what it is doing. You can also look at RequestAttributeFilter class.
 
-## employees with their salaries
+### employees with their salaries
 ```
 query {
   employees {
@@ -73,7 +76,7 @@ This query will return a list of employees with their salaries.
 The employees are coming from a hardcoded repository. Look at EmployeeService.class
 and their salaries are coming from SalaryController.salary() method that is annotated with @SchemaMapping (look here for more details: https://docs.spring.io/spring-graphql/docs/1.0.0-SNAPSHOT/reference/html/#controllers-mapping)
 
-## just employee names
+### just employee names
 ```
 query {
   employees {
@@ -83,7 +86,7 @@ query {
 ```
 This is in-built feature of GraphQL, there is no need to implement anything.
 
-## load one employee by his/her id
+### load one employee by his/her id
 ```
 query {
   employee(id: 3)
@@ -94,7 +97,7 @@ query {
 ```
 Look at the EmployeeAndSalaryController.employee() method.
 
-## filter by name and salary as parameters
+### filter by name and salary as parameters
 ```
 query {
   filterEmployees(name: "Ivan", salary: 45) {
@@ -104,7 +107,7 @@ query {
 ```
 Look at the EmployeeAndSalaryController.filterEmployees() - it is not link to any DB yet.
 
-## filter using and object (LinkFilter.class) with optional parameters
+### filter using and object (LinkFilter.class) with optional parameters
 ```
 query {
   filter2Employees(filter: {name: "Ivan"}) {
