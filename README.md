@@ -32,6 +32,7 @@ You can check different actuator endpoints enabled there. If you see a page with
 ## Where is the main configuration
 You will find all queries in **schema.graphqls** file. We can use several files as well.
 
+The schema can be seen via browser as well: http://localhost:8080/graphql/schema
 
 ## Make GraphQL calls:
 The application comes with in-built [GraphiQL interface](https://github.com/spring-projects/spring-graphql/blob/main/spring-graphql-docs/src/docs/asciidoc/boot-starter.adoc#graphiql). 
@@ -114,6 +115,6 @@ query {
 Look at the EmployeeAndSalaryController.filter2Employees(), check how we use LinkFilter class.
 
 
-
+... integration with Spring-Data is coming ... TBD
 
 
