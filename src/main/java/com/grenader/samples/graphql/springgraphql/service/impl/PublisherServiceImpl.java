@@ -1,8 +1,9 @@
 package com.grenader.samples.graphql.springgraphql.service.impl;
 
-import com.github.mdaliazam.graphql.domain.Publisher;
-import com.github.mdaliazam.graphql.repository.PublisherRepository;
-import com.github.mdaliazam.graphql.service.PublisherService;
+import com.grenader.samples.graphql.springgraphql.domain.Publisher;
+import com.grenader.samples.graphql.springgraphql.repository.PublisherRepository;
+import com.grenader.samples.graphql.springgraphql.service.PublisherService;
+import graphql.com.google.common.base.Predicate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -65,7 +66,8 @@ public class PublisherServiceImpl implements PublisherService {
 	@Transactional(readOnly = true)
 	public Optional<Publisher> findOne(Long id) {
 		log.debug("Request to get Publisher : {}", id);
-		return publisherRepository.findById(id);
+		Predicate titleIs = null; //QPublisher.todo.title.eq("Foo");
+		return publisherRepository.findOne(new Pre);
 	}
 
 	/**

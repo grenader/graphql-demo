@@ -17,6 +17,8 @@ import java.util.Optional;
  * @author <a href="mailto:softx.it@gmail.com">Mohammad Ali Azam</a>
  *
  */
+/*
+
 @Component
 public class EntityQueryResolver implements GraphQLQueryResolver {
 
@@ -24,13 +26,15 @@ public class EntityQueryResolver implements GraphQLQueryResolver {
 	private final AuthorService authorService;
 	private final BookService bookService;
 
-	/**
+	*/
+/**
 	 * Constructor that takes instances of injected service bean for all entities
 	 * 
 	 * @param publisherService An instance of Spring managed PublisherService bean
 	 * @param authorService An instance of Spring managed AuthorService bean
 	 * @param bookService An instance of Spring managed BookService bean
-	 */
+	 *//*
+
 	public EntityQueryResolver(PublisherService publisherService, AuthorService authorService,
 			BookService bookService) {
 		this.publisherService = publisherService;
@@ -38,12 +42,14 @@ public class EntityQueryResolver implements GraphQLQueryResolver {
 		this.bookService = bookService;
 	}
 
-	/**
+	*/
+/**
 	 * Returns a Publisher for the given id
 	 * 
 	 * @param id Primary key of the Publisher
 	 * @return An instance of Publisher
-	 */
+	 *//*
+
 	public Publisher getPublisherById(Long id) {
 		try {
 			Optional<Publisher> publisher = publisherService.findOne(id);
@@ -56,12 +62,14 @@ public class EntityQueryResolver implements GraphQLQueryResolver {
 		return null;
 	}
 
-	/**
+	*/
+/**
 	 * Returns an Author for the given id
 	 * 
 	 * @param id Primary key of the Author
 	 * @return An instance of Author
-	 */
+	 *//*
+
 	public Author getAuthorById(Long id) {
 		try {
 			Optional<Author> author = authorService.findOne(id);
@@ -75,12 +83,14 @@ public class EntityQueryResolver implements GraphQLQueryResolver {
 		return null;
 	}
 
-	/**
+	*/
+/**
 	 * Returns a Book for the given id
 	 * 
 	 * @param id Primary key of the Book
 	 * @return An instance of Book
-	 */
+	 *//*
+
 	public Book getBookById(Long id) {
 		try {
 			Optional<Book> book = bookService.findOne(id);
@@ -93,3 +103,4 @@ public class EntityQueryResolver implements GraphQLQueryResolver {
 		return null;
 	}
 }
+*/

@@ -1,8 +1,8 @@
 package com.grenader.samples.graphql.springgraphql.service.impl;
 
-import com.github.mdaliazam.graphql.domain.Author;
-import com.github.mdaliazam.graphql.repository.AuthorRepository;
-import com.github.mdaliazam.graphql.service.AuthorService;
+import com.grenader.samples.graphql.springgraphql.domain.Author;
+import com.grenader.samples.graphql.springgraphql.repository.AuthorRepository;
+import com.grenader.samples.graphql.springgraphql.service.AuthorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -65,7 +65,7 @@ public class AuthorServiceImpl implements AuthorService {
 	@Transactional(readOnly = true)
 	public Optional<Author> findOne(Long id) {
 		log.debug("Request to get Author : {}", id);
-		return authorRepository.findById(id);
+		return authorRepository.findOne(id);
 	}
 
 	/**

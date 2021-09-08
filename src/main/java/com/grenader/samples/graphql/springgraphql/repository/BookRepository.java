@@ -1,10 +1,8 @@
 package com.grenader.samples.graphql.springgraphql.repository;
 
-import com.github.mdaliazam.graphql.domain.Book;
 import com.grenader.samples.graphql.springgraphql.domain.Book;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
-import org.springframework.stereotype.Repository;
+import org.springframework.graphql.data.GraphQlRepository;
 
 /**
  * Spring Data repository for the Book entity
