@@ -1,8 +1,8 @@
 package com.grenader.samples.graphql.springgraphql.service.impl;
 
-import com.github.mdaliazam.graphql.domain.Book;
-import com.github.mdaliazam.graphql.repository.BookRepository;
-import com.github.mdaliazam.graphql.service.BookService;
+import com.grenader.samples.graphql.springgraphql.domain.Book;
+import com.grenader.samples.graphql.springgraphql.repository.BookRepository;
+import com.grenader.samples.graphql.springgraphql.service.BookService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;

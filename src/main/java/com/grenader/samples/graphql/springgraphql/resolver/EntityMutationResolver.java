@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
  * @author <a href="mailto:softx.it@gmail.com">Mohammad Ali Azam</a>
  *
  */
+/*
+
 @Component
 public class EntityMutationResolver implements GraphQLMutationResolver {
 
@@ -20,13 +22,15 @@ public class EntityMutationResolver implements GraphQLMutationResolver {
 	private final AuthorService authorService;
 	private final BookService bookService;
 
-	/**
+	*/
+/**
 	 * Constructor that takes instances of injected service bean for all entities
 	 * 
 	 * @param publisherService An instance of Spring managed PublisherService bean
 	 * @param authorService An instance of Spring managed AuthorService bean
 	 * @param bookService An instance of Spring managed BookService bean
-	 */
+	 *//*
+
 	public EntityMutationResolver(PublisherService publisherService, AuthorService authorService,
 			BookService bookService) {
 		this.publisherService = publisherService;
@@ -34,33 +38,38 @@ public class EntityMutationResolver implements GraphQLMutationResolver {
 		this.bookService = bookService;
 	}
 
-	/**
+	*/
+/**
 	 * Adds a Publisher entity
 	 * 
 	 * @param name name of the Publisher
 	 * @return An instance of Publisher if created successfully
 	 * @throws Exception If any occurred
-	 */
+	 *//*
+
 	public Publisher addPublisher(String name) throws Exception {
 		Publisher book = new Publisher(name);
 		return publisherService.save(book);
 	}
 
-	/**
+	*/
+/**
 	 * Adds a Author entity
 	 * 
 	 * @param name Name of the Author
 	 * @param publisherId Id of the parent Publisher
 	 * @return An instance of Author if created successfully
 	 * @throws Exception If any occurred
-	 */
+	 *//*
+
 	public Author addAuthor(String name, Long publisherId) throws Exception {
 		Author book = new Author(name);
 		book.setPublisher(publisherService.findOne(publisherId).get());
 		return authorService.save(book);
 	}
 
-	/**
+	*/
+/**
 	 * Adds a Book entity
 	 * 
 	 * @param title Title of the Book
@@ -69,7 +78,8 @@ public class EntityMutationResolver implements GraphQLMutationResolver {
 	 * @param authorId Id of the parent Author
 	 * @return An instance of Book if created successfully
 	 * @throws Exception If any occurred
-	 */
+	 *//*
+
 	public Book addBook(String title, String ISBN, Long publisherId, Long authorId) throws Exception {
 		Book book = new Book(title, ISBN);
 		book.setAuthor(authorService.findOne(authorId).get());
@@ -79,3 +89,5 @@ public class EntityMutationResolver implements GraphQLMutationResolver {
 	}
 
 }
+
+*/

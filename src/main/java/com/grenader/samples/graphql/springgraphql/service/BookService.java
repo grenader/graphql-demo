@@ -1,6 +1,5 @@
 package com.grenader.samples.graphql.springgraphql.service;
 
-import com.github.mdaliazam.graphql.domain.Book;
 import com.grenader.samples.graphql.springgraphql.domain.Book;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
