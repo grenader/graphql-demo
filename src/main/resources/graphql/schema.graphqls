@@ -10,6 +10,29 @@ type Query {
     employee(id: ID!): Employee
 }
 
+type Publisher {
+    id: ID!
+    name: String!
+    authors: [Author]
+    books: [Book]
+}
+
+type Author {
+    id: ID!
+    name: String!
+    publisher: Publisher!
+    books: [Book]!
+}
+
+
+type Book {
+    id: ID!
+    title: String!
+    ASIN: String!
+    author: Author!
+    publisher: Publisher!
+}
+
 input LinkFilter {
     name: String
     salary: Float
