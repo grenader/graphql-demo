@@ -40,6 +40,9 @@ The schema can be seen via browser as well: http://localhost:8080/graphql/schema
 ## Make GraphQL calls:
 The application comes with in-built [GraphiQL interface](https://github.com/spring-projects/spring-graphql/blob/main/spring-graphql-docs/src/docs/asciidoc/boot-starter.adoc#graphiql). 
 You can access it via http://localhost:8080/graphiql URL
+This is how it looks:
+![GraphiQL UII in the browser](/doc/images/graphiql-ui.png)
+
 
 Try the following queries. Just enter provided queries to the windows on the left and press 'Run' button on the top.
 The interface has a useful auto-complete feature.
