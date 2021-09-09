@@ -1,6 +1,7 @@
 package com.grenader.samples.graphql.springgraphql.domain;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -19,6 +20,7 @@ import java.util.Set;
 @Entity
 @Table(name = "publisher")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Data
 public class Publisher implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -59,29 +61,9 @@ public class Publisher implements Serializable {
 		this.name = name;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
 	public Publisher name(String name) {
 		this.name = name;
 		return this;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Set<Book> getBooks() {
-		return books;
 	}
 
 	public Publisher books(Set<Book> books) {
@@ -105,10 +87,6 @@ public class Publisher implements Serializable {
 		this.books = books;
 	}
 
-	public Set<Author> getAuthors() {
-		return authors;
-	}
-
 	public Publisher authors(Set<Author> authors) {
 		this.authors = authors;
 		return this;
@@ -126,10 +104,6 @@ public class Publisher implements Serializable {
 		return this;
 	}
 
-	public void setAuthors(Set<Author> authors) {
-		this.authors = authors;
-	}
-
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
@@ -143,11 +117,8 @@ public class Publisher implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return 31;
-	}
-
-	@Override
-	public String toString() {
-		return "Publisher{" + "id=" + getId() + ", name='" + getName() + "'" + "}";
+		int result = id != null ? id.hashCode() : 0;
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		return result;
 	}
 }

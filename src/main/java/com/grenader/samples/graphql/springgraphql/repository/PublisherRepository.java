@@ -1,8 +1,8 @@
 package com.grenader.samples.graphql.springgraphql.repository;
 
 import com.grenader.samples.graphql.springgraphql.domain.Publisher;
-import org.springframework.data.querydsl.QuerydslPredicateExecutor;
-import org.springframework.graphql.data.GraphQlRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * Spring Data repository for the Publisher entity
@@ -11,6 +11,6 @@ import org.springframework.graphql.data.GraphQlRepository;
  *
  */
 @SuppressWarnings("unused")
-@GraphQlRepository
-public interface PublisherRepository extends QuerydslPredicateExecutor<Publisher> {
+@Repository
+public interface PublisherRepository extends JpaRepository<Publisher, Long> {
 }

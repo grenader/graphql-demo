@@ -3,6 +3,7 @@ package com.grenader.samples.graphql.springgraphql.domain;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -21,6 +22,7 @@ import java.util.Set;
 @Entity
 @Table(name = "author")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Data
 public class Author implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -31,7 +33,7 @@ public class Author implements Serializable {
 	private Long id;
 
 	@NotNull
-	@Column(name = "name", nullable = false)
+	@Column(nullable = false)
 	private String name;
 
 	@OneToMany(mappedBy = "author", fetch = FetchType.EAGER)
@@ -120,6 +122,7 @@ public class Author implements Serializable {
 		this.publisher = publisher;
 	}
 
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
@@ -133,11 +136,8 @@ public class Author implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return 31;
-	}
-
-	@Override
-	public String toString() {
-		return "Author{" + "id=" + getId() + ", name='" + getName() + "'" + "}";
+		int result = id != null ? id.hashCode() : 0;
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		return result;
 	}
 }

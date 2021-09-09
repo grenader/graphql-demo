@@ -8,6 +8,10 @@ type Query {
     filterEmployees(name: String!, salary: Float!):  [Employee]!
     filter2Employees(filter: LinkFilter):  [Employee]!
     employee(id: ID!): Employee
+
+    publisherById(id:Int): Publisher
+    authorById(id:Int): Author
+    bookById(id:Int): Book
 }
 
 type Publisher {
@@ -72,10 +76,7 @@ enum ReleaseStatus {
     SNAPSHOT
 }
 
-type Mutation {
-    # restricted
-    updateSalary(input: UpdateSalaryInput!): UpdateSalaryPayload
-}
+
 type Employee {
     id: ID!
     name: String

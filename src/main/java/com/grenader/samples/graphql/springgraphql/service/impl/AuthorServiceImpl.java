@@ -65,7 +65,7 @@ public class AuthorServiceImpl implements AuthorService {
 	@Transactional(readOnly = true)
 	public Optional<Author> findOne(Long id) {
 		log.debug("Request to get Author : {}", id);
-		return authorRepository.findOne(id);
+		return authorRepository.findById(id);
 	}
 
 	/**
