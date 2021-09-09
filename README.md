@@ -118,6 +118,75 @@ query {
 Look at the EmployeeAndSalaryController.filter2Employees(), check how we use LinkFilter class.
 
 
-... integration with Spring-Data is coming ... TBD
+## Integration with Spring-Data-JPA
+This iis probably not the best implementation, it's straing-forward, but could be better.
+It uses in-memory h2 database. 
+
+It is a standard way of using spring-data-jpa.
+
+Please, look at 
+- model classes in **model** package
+- repositories in **repository** package
+- data service interfaces and their implementations in **service** package
+- and controllers in **controller.book** package.
+
+We also have two graphqls (schema) files. One is for types/classes and GET operations and the second is for mutations (POST, PUT).
+
+There are three linked entities, they are Publisher, Author and Book.
+
+Try the following queries ont by one form top to the bottom to the see the functionality in action:
+```
+
+mutation addPublisher {
+  addPublisher(name: "My lovely publishes") {
+    id
+  }
+  
+}
+
+mutation addAuthor {
+  addAuthor(publisherId:1, name: "John Smith") {
+    id
+  }
+  
+}
+
+
+mutation addBook {
+  addBook(title: "The second book", ISBN: "23456", publisherId:1, authorId: 52) {
+    id
+  }
+  
+}
+
+query getABook {
+  bookById(id: 102) {
+    id, title, author{name}, publisher {
+      authors {
+        id
+      }
+    }
+  }
+}
+
+query getAnAuthor {
+  authorById (id: 52) {
+    id, name
+  }
+}
+```
+
+You will be able to create a publisher with ID=1, author with ID=52 and the boor will get ID=102.
+Check that out.
+
+## GraphQL plugin in IDEA.
+GraphQL plugin will notify you about errors in schema file(s).
+![GraphQL Plugin](/doc/images/graphql-plugin.png)
+
+It also allows to call your GraphQL right from IDEA.
+
+
+
+
 
 
