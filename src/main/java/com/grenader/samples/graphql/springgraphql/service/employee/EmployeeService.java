@@ -19,7 +19,6 @@ import com.grenader.samples.graphql.springgraphql.model.Employee;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 @Component

@@ -77,4 +77,22 @@ public class Book implements Serializable {
 		return this;
 	}
 
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (!(o instanceof Book)) {
+			return false;
+		}
+		return id != null && id.equals(((Book) o).id);
+	}
+
+	@Override
+	public int hashCode() {
+		int result = id != null ? id.hashCode() : 0;
+		result = 31 * result + (title != null ? title.hashCode() : 0);
+		return result;
+	}
 }
