@@ -184,6 +184,13 @@ GraphQL plugin will notify you about errors in schema file(s).
 ![GraphQL Plugin](/doc/images/graphql-plugin.png)
 
 It also allows to call your GraphQL right from IDEA.
+![GraphQL Plugin to query](/doc/images/query-via-plugin.png)
+
+and get results
+![GraphQL Plugin Query Results](/doc/images/query-results.png)
+
+
+
 
 
 
