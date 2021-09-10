@@ -1,6 +1,6 @@
 # Spring GraphQL Demo
 
-It's a StringBoot application. It uses [Lombok](https://projectlombok.org/setup/gradle)
+It's a StringBoot application that exposes [GraphQL API](https://docs.spring.io/spring-graphql/docs/1.0.0-M2/reference/html/). It uses [Lombok](https://projectlombok.org/setup/gradle)
 
 It needs **Java 11**! Make sure that you are running it on before starting the application or opening the project.
 
@@ -181,6 +181,14 @@ query getAnAuthor {
 
 You will be able to create a publisher with ID=1, author with ID=52 and the boor will get ID=102.
 Check that out.
+
+## Unit Tests
+We are using [WebTestClient.class](https://www.baeldung.com/spring-5-webclient) to test the application with [WebGraphQlTester.class](https://docs.spring.io/spring-graphql/docs/1.0.0-M2/reference/html/#boot-graphql-testing) to get better testing capabilities.
+
+Look at **EmployeeApplicationTests.class** for more details.
+
+Testing documentation is here: https://docs.spring.io/spring-graphql/docs/1.0.0-M2/reference/html/#boot-graphql-testing
+
 
 ## GraphQL plugin in IDEA.
 GraphQL plugin will notify you about errors in schema file(s).
