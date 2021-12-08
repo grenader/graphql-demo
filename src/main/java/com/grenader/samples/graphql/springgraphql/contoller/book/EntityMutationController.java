@@ -38,8 +38,8 @@ public class EntityMutationController {
 
     @MutationMapping
     public Publisher addPublisher(@Argument String name) throws Exception {
-        Publisher book = new Publisher(name);
-        return publisherService.save(book);
+        Publisher publisher = new Publisher(name);
+        return publisherService.save(publisher);
     }
 
 
@@ -53,9 +53,9 @@ public class EntityMutationController {
      */
     @MutationMapping
     public Author addAuthor(@Argument String name, @Argument Long publisherId) throws Exception {
-        Author book = new Author(name);
-        book.setPublisher(publisherService.findOne(publisherId).get());
-        return authorService.save(book);
+        Author author = new Author(name);
+        author.setPublisher(publisherService.findOne(publisherId).get());
+        return authorService.save(author);
     }
 
 

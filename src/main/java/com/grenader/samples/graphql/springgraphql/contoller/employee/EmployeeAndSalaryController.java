@@ -14,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -41,6 +40,7 @@ public class EmployeeAndSalaryController {
      */
     @QueryMapping
     public Mono<Employee> employee(@Argument int id) {
+
         return Mono.just(new Employee(id, "Fake Name"));
     }
 
@@ -53,8 +53,8 @@ public class EmployeeAndSalaryController {
      * @return
      */
     @QueryMapping
-    public List<Employee> filterEmployees(@Argument String name, @Argument Float salary) {
-        return Arrays.asList(new Employee(7, name));
+    public Employee findEmployee(@Argument String name, @Argument Float salary) {
+        return new Employee(7, name);
     }
 
     /**
@@ -67,18 +67,8 @@ public class EmployeeAndSalaryController {
      * @return
      */
     @QueryMapping
-    public List<Employee> filter2Employees(@Argument LinkFilter filter) {
-        return Arrays.asList(new Employee(7, filter.getName()));
-    }
-
-    /**
-     * todo: which one is used ?
-     * @param id
-     * @return
-     */
-    @QueryMapping
-    public Mono<Employee> employeeById(@Argument int id) {
-        return Mono.just(new Employee(id, "Fake Name"));
+    public Employee findEmployeeFilter(@Argument LinkFilter filter) {
+        return new Employee(7, filter.getName());
     }
 
     /**
@@ -96,10 +86,11 @@ public class EmployeeAndSalaryController {
      * @param salaryInput
      */
     @MutationMapping
-    public void updateSalary(@Argument("input") SalaryInput salaryInput) {
-        String employeeId = salaryInput.getEmployeeId();
-        BigDecimal salary = salaryInput.getNewSalary();
-        this.salaryService.updateSalary(employeeId, salary);
+    public Employee updateSalary(@Argument("input") SalaryInput salaryInput) {
+        Integer employeeId = salaryInput.getEmployeeId();
+        Long salary = salaryInput.getNewSalary();
+
+        return salaryService.updateSalary(employeeId, BigDecimal.valueOf(salary));
     }
 
 }

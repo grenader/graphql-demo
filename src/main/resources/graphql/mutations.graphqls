@@ -1,7 +1,7 @@
 # Mutation: to add entities
 type Mutation {
     # restricted
-    updateSalary(input: UpdateSalaryInput!): UpdateSalaryPayload
+    updateSalary(input: UpdateSalaryInput!): Employee!
 
     addPublisher(name: String!): Publisher!
     addAuthor(name: String!, publisherId: Int!): Author!

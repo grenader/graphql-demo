@@ -9,6 +9,6 @@ import java.math.BigDecimal;
  */
 @Data
 public class SalaryInput {
-    private String employeeId;
-    private BigDecimal newSalary;
+    private Integer employeeId;
+    private Long newSalary;
 }

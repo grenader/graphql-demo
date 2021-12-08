@@ -5,9 +5,10 @@ type Query {
     artifactRepository(id : ID!) : ArtifactRepository
     project(slug: ID!): Project
     employees: [Employee]
-    filterEmployees(name: String!, salary: Float!):  [Employee]!
-    filter2Employees(filter: LinkFilter):  [Employee]!
+
     employee(id: ID!): Employee
+    findEmployee(name: String!, salary: Float!):  Employee!
+    findEmployeeFilter(filter: LinkFilter):  Employee!
 
     publisherById(id:Int): Publisher
     authorById(id:Int): Author
@@ -86,7 +87,7 @@ type Employee {
 
 input UpdateSalaryInput {
     employeeId: ID!
-    salary: String!
+    newSalary: Int!
 }
 type UpdateSalaryPayload {
     success: Boolean!
