@@ -39,7 +39,7 @@ The schema can be seen via browser as well: http://localhost:8080/graphql/schema
 
 ## Make GraphQL calls:
 The application comes with in-built [GraphiQL interface](https://github.com/spring-projects/spring-graphql/blob/main/spring-graphql-docs/src/docs/asciidoc/boot-starter.adoc#graphiql). 
-You can access it via http://localhost:8080/graphiql URL
+You can access it via [Local GraphiQL](http://localhost:8080/graphiql) URL.
 This is how it looks:
 ![GraphiQL UII in the browser](/doc/images/graphiql-ui.png)
 
@@ -177,6 +177,55 @@ query getAnAuthor {
     id, name
   }
 }
+
+---
+; More samples of the add/query chain:
+
+mutation AddPublisher {
+  addPublisher(name: "Cervantes Publish House")
+  {
+   id, name 
+  }
+}
+
+query GetPublishers {
+  publisherById(id: 1)
+  {
+    id, name
+  }
+}
+
+mutation AddAuthor {
+  addAuthor(name: "Cervantes", publisherId: 1)
+  {
+   id, name 
+  }
+}
+
+query Authors {
+  authorById(id: 1)
+  {
+    id, name, publisher{name}, books{title}
+    
+  }
+}
+
+mutation addBook {
+  addBook(title: "My Life", ISBN: "12121", publisherId: 1, authorId: 53)
+  {
+    id, title
+  }
+  
+}
+
+query getBooks {
+  bookById(id: 102)
+  {
+    id, title, publisher{id, name}, author {id, name}, ASIN
+    
+  }
+}
+
 ```
 
 You will be able to create a publisher with ID=1, author with ID=52 and the boor will get ID=102.

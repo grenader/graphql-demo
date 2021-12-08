@@ -1,32 +1,9 @@
 # Mutation: to add entities
 type Mutation {
-    # restricted
+
     updateSalary(input: UpdateSalaryInput!): Employee!
 
     addPublisher(name: String!): Publisher!
     addAuthor(name: String!, publisherId: Int!): Author!
     addBook(title: String!, ISBN: String!, publisherId: Int!, authorId:Int!): Book!
 }
-#
-#type Publisher {
-#    id: ID!
-#    name: String!
-#    authors: [Author]
-#    books: [Book]
-#}
-#
-#type Author {
-#    id: ID!
-#    name: String!
-#    publisher: Publisher!
-#    books: [Book]!
-#}
-#
-#
-#type Book {
-#    id: ID!
-#    title: String!
-#    ASIN: String!
-#    author: Author!
-#    publisher: Publisher!
-#}
