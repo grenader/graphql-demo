@@ -9,6 +9,7 @@ import reactor.core.publisher.Mono;
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -37,7 +38,8 @@ public class SalaryService {
 	}
 
 	public Employee updateSalary(Integer employeeId, BigDecimal newSalary) {
-		Employee employee = employeeService.getEmployeeById(employeeId);
+		Optional<Employee> optionalEmployee = employeeService.getEmployeeById(employeeId);
+		Employee employee = (Employee) optionalEmployee.orElseThrow(IllegalArgumentException::new);
 
 		// store for future calls.
 		employeeSalaryGrid.put(employeeId, newSalary);

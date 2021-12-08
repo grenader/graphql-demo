@@ -21,12 +21,10 @@ public class EmployeeService {
 	}
 
 
-	public Employee getEmployeeById(Integer employeeId) {
-		Optional<Employee> optionalEmployee = staticEmployees.stream().
+	public Optional<Employee> getEmployeeById(Integer employeeId) {
+		return staticEmployees.stream().
 				filter(e -> { return  e.getId().equals(employeeId);}).
 				findFirst();
-
-		return optionalEmployee.orElseThrow(IllegalArgumentException::new);
 
 	}
 }

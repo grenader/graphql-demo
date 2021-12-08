@@ -15,14 +15,12 @@ class EmployeeServiceTest {
 
     @Test
     void testGetEmployeeById_Ok() {
-        assertEquals(new Employee(1, "Andi"), service.getEmployeeById(1));
-        assertEquals(new Employee(2, "Simona"), service.getEmployeeById(2));
+        assertEquals(new Employee(1, "Andi"), service.getEmployeeById(1).get());
+        assertEquals(new Employee(2, "Simona"), service.getEmployeeById(2).get());
     }
 
     @Test
     void testGetEmployeeById_error() {
-        assertThrows(IllegalArgumentException.class, () -> {
-                    assertNull(service.getEmployeeById(100));
-                });
+        assertTrue(service.getEmployeeById(100).isEmpty());
     }
 }

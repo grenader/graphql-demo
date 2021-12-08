@@ -15,10 +15,11 @@ import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
-public class EmployeeAndSalaryController {
+public class EmployeeController {
 
     // Define service called in this controller
     private final EmployeeService employeeService;
@@ -41,7 +42,11 @@ public class EmployeeAndSalaryController {
     @QueryMapping
     public Mono<Employee> employee(@Argument int id) {
 
-        return Mono.just(new Employee(id, "Fake Name"));
+        Optional<Employee> optionalEmployee = employeeService.getEmployeeById(id);
+
+        return Mono.just(optionalEmployee.orElseGet(
+                () -> new Employee(id, "Fake Name"))
+        );
     }
 
     /**

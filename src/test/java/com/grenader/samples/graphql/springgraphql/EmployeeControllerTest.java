@@ -14,7 +14,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
-class EmployeeApplicationTests {
+class EmployeeControllerTest {
 
 	@Autowired
 	WebApplicationContext context;
