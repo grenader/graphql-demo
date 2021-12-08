@@ -1,6 +1,6 @@
 package com.grenader.samples.graphql.springgraphql.service.employee;
 
-import com.grenader.samples.graphql.springgraphql.model.Employee;
+import com.grenader.samples.graphql.springgraphql.model.employee.Employee;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;

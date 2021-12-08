@@ -1,6 +1,6 @@
 package com.grenader.samples.graphql.springgraphql.service.employee;
 
-import com.grenader.samples.graphql.springgraphql.model.Employee;
+import com.grenader.samples.graphql.springgraphql.model.employee.Employee;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
@@ -25,7 +25,7 @@ public class SalaryService {
 	}
 
 	public void updateSalary(String employeeId, BigDecimal newSalary) {
-		// empty
+		throw new UnsupportedOperationException("Not implemented yet");
 	}
 
 }
